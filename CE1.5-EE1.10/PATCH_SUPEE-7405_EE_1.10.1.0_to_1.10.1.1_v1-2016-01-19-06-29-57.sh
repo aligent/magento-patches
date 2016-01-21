@@ -692,7 +692,7 @@ index 418fae8..f0b11cf 100644
 +    public function escapeHtmlWithLinks($data, $allowedTags = null)
 +    {
 +        if (!empty($data) && is_array($allowedTags) && in_array('a', $allowedTags)) {
-+            $links = [];
++            $links = array();
 +            $i = 1;
 +            $regexp = "/<a\s[^>]*href\s*?=\s*?([\"\']??)([^\" >]*?)\\1[^>]*>(.*)<\/a>/siU";
 +            while (preg_match($regexp, $data, $matches)) {

@@ -402,7 +402,7 @@ index 72c43a8..da9af0f 100644
 -        if (is_string($data) && is_array($allowedTags) && in_array('a', $allowedTags)) {
 -            $links = array();
 +        if (!empty($data) && is_array($allowedTags) && in_array('a', $allowedTags)) {
-+            $links = [];
++            $links = array();
              $i = 1;
              $data = str_replace('%', '%%', $data);
 -            $regexp = '@(<a[^>]*>(?:[^<]|<[^/]|</[^a]|</a[^>])*</a>)@';

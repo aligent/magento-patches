@@ -751,7 +751,7 @@ index b6254a4..57c896d 100644
 -        if (is_string($data) && is_array($allowedTags) && in_array('a', $allowedTags)) {
 -            $links = array();
 +        if (!empty($data) && is_array($allowedTags) && in_array('a', $allowedTags)) {
-+            $links = [];
++            $links = array();
              $i = 1;
 -            $regexp = '@(<a[^>]*>(?:[^<]|<[^/]|</[^a]|</a[^>])*</a>)@';
 +            $regexp = "/<a\s[^>]*href\s*?=\s*?([\"\']??)([^\" >]*?)\\1[^>]*>(.*)<\/a>/siU";
